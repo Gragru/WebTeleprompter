@@ -4,13 +4,9 @@ var scroll = true;
 var sX = 1;
 
 var element = document.getElementById('text');
+GetText();
+setInterval(GetText, 10000);
 
-fetch("text.txt")
-  .then((res) => res.text())
-  .then((text) => {
-    element.innerHTML = text;
-   })
-  .catch((e) => console.error(e));
 
 
 
@@ -18,10 +14,10 @@ element.scrollTop = -100;
 
 function scrollElementBy50px(){
     
-    console.log(element.scrollTop)
+    // console.log(element.scrollTop)
     if(scroll == true)
     {
-        console.log("Scroll");
+
         element.scrollTop += speed;
     }
 
@@ -66,5 +62,16 @@ function Mirror(){
         sX = 1;
         element.className = "container2";
     }
-    console.log(sX);
 }
+
+function GetText(){
+    fetch("text.txt")
+    .then((res) => res.text())
+    .then((text) => {
+        text = text.replace("*", "<h3>");
+        text = text.replace("¤", "</h3>");
+        element.innerHTML = text;
+    })
+    .catch((e) => console.error(e));
+    console.log("Ladda om texten");
+}   
