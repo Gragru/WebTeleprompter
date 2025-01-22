@@ -1,0 +1,23 @@
+body{
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 48px;
+    background-color: #000000;
+    margin: 5px;
+    padding: 20px;
+}
+.container1{ height: 75vh;
+    overflow-y:auto;
+    margin: 30px;
+    /* transform: scaleX(-1); */
+    white-space: pre-wrap;
+    padding: 20px;
+}
+
+.container2{ height: 75vh;
+    overflow-y:auto;
+    margin: 30px;
+    transform: scaleX(-1);
+    white-space: pre-wrap;
+    padding: 20px;
+}
