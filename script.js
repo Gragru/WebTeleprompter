@@ -5,6 +5,15 @@ var sX = 1;
 
 var element = document.getElementById('text');
 
+fetch("text.txt")
+  .then((res) => res.text())
+  .then((text) => {
+    element.innerHTML = text;
+   })
+  .catch((e) => console.error(e));
+
+
+
 element.scrollTop = -100;
 
 function scrollElementBy50px(){
