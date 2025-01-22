@@ -2,10 +2,11 @@ var speed = 1;
 var time = 60;
 var scroll = true;
 var sX = 1;
+var reload = 0;
 
 var element = document.getElementById('text');
 GetText();
-setInterval(GetText, 10000);
+setInterval(GetText, 5000);
 
 
 
@@ -65,7 +66,7 @@ function Mirror(){
 }
 
 function GetText(){
-    fetch("text.txt")
+    fetch("text.txt?")
     .then((res) => res.text())
     .then((text) => {
         text = text.replace("*", "<h3>");
@@ -74,4 +75,5 @@ function GetText(){
     })
     .catch((e) => console.error(e));
     console.log("Ladda om texten");
+    document.getElementById('reload').innerHTML = reload++;
 }   
